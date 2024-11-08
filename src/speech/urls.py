@@ -1,7 +1,8 @@
 # urls.py
+
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('tts/', views.text_to_speech_api, name='text_to_speech'),
+    path('hugging.html/', views.use_hugging_face, name='use_hugging_face'),
 ]

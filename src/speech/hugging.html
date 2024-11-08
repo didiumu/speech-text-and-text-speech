@@ -1,0 +1,24 @@
+<!-- your_template.html -->
+<html>
+
+<body>
+    <h1>Hugging Face API Result</h1>
+
+    <!-- Form to submit text for Hugging Face API or TTS -->
+    <form method="POST">
+        {% csrf_token %}
+        <label for="text">Enter text for Hugging Face API:</label>
+        <input type="text" id="text" name="text" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if result %}
+    <h2>API Result:</h2>
+    <pre>{{ result | json_script:"hugging_face_result" }}</pre>
+    {% elif error %}
+    <h2>Error:</h2>
+    <p>{{ error }}</p>
+    {% endif %}
+</body>
+
+</html>
